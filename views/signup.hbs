@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,33 +8,38 @@
     <title>JOB PORTAL</title>
     <link rel="stylesheet" href="/css/job.css">
 </head>
+
 <body>
-    <div class="regform"><h1>Registration</h1><br><h4>Let’s get started, tell us about yourself !!!</h4></div>
- <div class="main">
-        <form >
+    <div class="regform">
+        <h1>Registration</h1><br>
+        <h4>Let’s get started, tell us about yourself !!!</h4>
+    </div>
+    <div class="main">
+        <form action="/signup" method="post">
             <div id="name">
                 <h2 class="name">Name</h2>
-                <input class="firstname" type="text" name="first_name"placeholder="Enter Name" ><br>
-               
+                <input class="firstname" type="text" name="name" placeholder="Enter Name" required><br>
+
             </div>
 
 
             <h2 class="name">Email</h2>
-            <input class="email" type="text" name="email"placeholder="Enter Email Id" ><br>
-            
+            <input class="email" type="text" name="email" placeholder="Enter Email Id" required><br>
+
 
             <h2 class="name">Phone</h2>
-            <input class="number" type="text" name="phone"placeholder="Enter Phone Number" ><br>
+            <input class="number" type="text" name="phone" placeholder="Enter Phone Number" required><br>
 
             <h2 class="name">Password</h2>
-            <input class="password" type="password" name="password" placeholder="Enter strong password">
+            <input class="password" type="password" name="password" placeholder="Enter strong password" required>
 
 
-            
-           
-<button type="submit" >Registration</button>
+
+
+            <button type="submit">Registration</button>
 
         </form>
     </div>
 </body>
+
 </html>
