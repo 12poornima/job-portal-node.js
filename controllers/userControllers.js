@@ -18,7 +18,7 @@ const loginPage = function (req, res, next) {
   res.render("login");
 };
 const homePage = function (req, res, next) {
-  res.render("");
+  res.render("home");
 };
 
 const doSignUp = async function (req, res) {
@@ -43,7 +43,7 @@ const doLogin = async function (req, res) {
     let check = await bcrypt.compare(req.body.password, user.password);
     console.log(check);
     if (check) {
-      res.send("Check Successfully");
+      res.redirect("/home");
     } else {
       res.redirect("/login");
     }
@@ -52,4 +52,11 @@ const doLogin = async function (req, res) {
   }
 };
 
-module.exports = { indexPage, signUpPage, loginPage, doSignUp, doLogin };
+module.exports = {
+  indexPage,
+  signUpPage,
+  loginPage,
+  doSignUp,
+  doLogin,
+  homePage,
+};
