@@ -17,6 +17,9 @@ const signUpPage = function (req, res, next) {
 const loginPage = function (req, res, next) {
   res.render("login");
 };
+const homePage = function (req, res, next) {
+  res.render("");
+};
 
 const doSignUp = async function (req, res) {
   console.log(req.body);
@@ -30,9 +33,20 @@ const doSignUp = async function (req, res) {
 };
 
 const doLogin = async function (req, res) {
-  console.log(req.body);
+  // console.log(req.body);
   let user = await usermodels.findOne({ email: req.body.email });
   if (user != null) {
+    // data baseil ulla data ann user
+    // console.log(user)
+    console.log(user.password);
+    console.log(req.body.password);
+    let check = await bcrypt.compare(req.body.password, user.password);
+    console.log(check);
+    if (check) {
+      res.send("Check Successfully");
+    } else {
+      res.redirect("/login");
+    }
   } else {
     res.redirect("/login");
   }

@@ -6,6 +6,7 @@ const {
   loginPage,
   doSignUp,
   doLogin,
+  homePage,
 } = require("../controllers/userControllers");
 
 /* GET home page. */
@@ -14,6 +15,7 @@ router.get("/", indexPage);
 router.get("/signup", signUpPage);
 
 router.get("/login", loginPage);
+router.get("/home", homePage);
 
 router.post("/signup", doSignUp);
 router.post("/login", doLogin);
