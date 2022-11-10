@@ -8,6 +8,7 @@ var app = express();
 
 var indexRouter = require("./routes/index");
 const companyRouter = require("./routes/company");
+const adminRouter = require("./routes/admin");
 const mongoose = require("mongoose");
 mongoose.connect(
   "mongodb+srv://poornima:1234@cluster0.76tvd1s.mongodb.net/jobDb?retryWrites=true&w=majority",
@@ -41,6 +42,7 @@ app.use(
 );
 app.use("/", indexRouter);
 app.use("/company", companyRouter);
+app.use("/admin", adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
