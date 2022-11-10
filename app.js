@@ -7,8 +7,7 @@ var logger = require("morgan");
 var app = express();
 
 var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-
+const companyRouter = require("./routes/company");
 const mongoose = require("mongoose");
 mongoose.connect(
   "mongodb+srv://poornima:1234@cluster0.76tvd1s.mongodb.net/jobDb?retryWrites=true&w=majority",
@@ -41,7 +40,7 @@ app.use(
   })
 );
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.use("/company", companyRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
