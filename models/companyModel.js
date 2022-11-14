@@ -9,7 +9,6 @@ const companySchema = mongoose.Schema({
     type: String,
     maxLength: 50,
     required: true,
-    unique: true,
   },
   Password: {
     type: String,
