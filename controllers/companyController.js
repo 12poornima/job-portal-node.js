@@ -1,5 +1,6 @@
 const companyModel = require("../models/companyModel");
 const bcrypt = require("bcrypt");
+const jobModel = require("../models/jobModel");
 
 const company = function (req, res) {
   res.send("Company Page");
@@ -56,8 +57,18 @@ const companyHomePage = function (req, res, next) {
   }
 };
 const getAddJobPage = function (req, res, next) {
-  res.render("company/add-job");
+  res.render("company/addJob");
 };
+
+const addJobCompany= async function(req,res,next){
+  console.log(req.body)
+  let  addJob= await jobModel .findOne({ Name:req.body.Name});
+  console.log(addJob)
+
+
+
+
+}
 
 module.exports = {
   company,
@@ -67,4 +78,5 @@ module.exports = {
   loginCompany,
   companyHomePage,
   getAddJobPage,
+  addJobCompany
 };
