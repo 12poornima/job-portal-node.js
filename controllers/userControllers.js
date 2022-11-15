@@ -35,6 +35,7 @@ const doSignUp = async function (req, res) {
     res.redirect("/login");
   } catch (error) {
     console.log(error);
+    res.redirect("/signup");
   }
 };
 
