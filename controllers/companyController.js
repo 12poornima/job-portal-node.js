@@ -60,15 +60,15 @@ const getAddJobPage = function (req, res, next) {
   res.render("company/addJob");
 };
 
-const addJobCompany= async function(req,res,next){
-  console.log(req.body)
-  let  addJob= await jobModel .findOne({ Name:req.body.Name});
-  console.log(addJob)
-
-
-
-
-}
+const addJobCompany = async function (req, res, next) {
+  console.log(req.body);
+  req.body.companyName = req.session.company.Name;
+  req.body.company_id = req.session.company._id;
+  req.body.job_post_date = new Date().toLocaleDateString();
+  console.log(req.body);
+  await jobModel.create(req.body);
+  res.redirect("/company/home");
+};
 
 module.exports = {
   company,
@@ -78,5 +78,5 @@ module.exports = {
   loginCompany,
   companyHomePage,
   getAddJobPage,
-  addJobCompany
+  addJobCompany,
 };

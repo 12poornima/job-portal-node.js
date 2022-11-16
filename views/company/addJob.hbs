@@ -1,61 +1,60 @@
-
-    <title>job form</title>
-    <link rel="stylesheet" href="/css/addjob.css">
+<title>job form</title>
+<link rel="stylesheet" href="/css/addjob.css">
 <h1 style="text-align: center" center>REGISTRATION FROM</h1>
-    <div class="from" >
-    <form action="company/addJob" method="post">
-    <table>
-        <tr>
-            <td>
-                JOB TITLE:
-            </td>
-            <td>
-                <input type="text" name="Name" placeholder="name" >
-            </td>
-        </tr>
-        <tr>
-            <td>
-                JOB DISCRIPTION:
-            </td>
-            <td>
-                <textarea  name="Job_discription" rows="10" placeholder="Discription"></textarea>
-            </td>
+<div class="from">
+    <form action="/company/addJob" method="post">
+        <table>
+            <tr>
+                <td>
+                    JOB TITLE:
+                </td>
+                <td>
+                    <input type="text" name="Name" placeholder="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    JOB DISCRIPTION:
+                </td>
+                <td>
+                    <textarea name="Job_discription" rows="10" placeholder="Discription"></textarea>
+                </td>
             </tr>
             <tr>
 
-            <td>
-                SALARY:
-            </td>
-            <td>
-                <input type="number" name="Salary" placeholder="salary">
-            </td>
+                <td>
+                    SALARY:
+                </td>
+                <td>
+                    <input type="number" name="Salary" placeholder="salary">
+                </td>
             </tr>
             <tr>
-            <td>
-                VACANCIES
-            </td>
-            <td>
-                <input type="number" name="Vacancies" placeholder="vacancies">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                EXPERIENCS:
-            </td>
-            <td>
-                <input type="text" name="Experiencs" placeholder="enter your experiences">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                LAST APPLY DATE:
-            </td>
-            <td>
-                <input type="date" name="Last_apply_date" placeholder="date">
-            </td>
-        </tr>
+                <td>
+                    VACANCIES
+                </td>
+                <td>
+                    <input type="number" name="Vacancies" placeholder="vacancies">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    EXPERIENCS:
+                </td>
+                <td>
+                    <input type="text" name="Experiencs" placeholder="enter your experiences">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    LAST APPLY DATE:
+                </td>
+                <td>
+                    <input type="date" name="Last_apply_date" placeholder="date">
+                </td>
+            </tr>
 
-    </table>
+        </table>
+        <button type="submit">submit</button>
     </form>
-    <button type="submit">submit</button>
-    </div>
+</div>
