@@ -28,9 +28,6 @@
 //   }
 // })
 
-
-
-
 var express = require("express");
 var router = express.Router();
 const {
@@ -41,7 +38,8 @@ const {
   loginCompany,
   companyHomePage,
   getAddJobPage,
-  addJobCompany
+  addJobCompany,
+  viewJobPage,
 } = require("../controllers/companyController");
 
 router.get("/", company);
@@ -52,6 +50,6 @@ router.post("/login", loginCompany);
 router.get("/home", companyHomePage);
 router.get("/add-job", getAddJobPage);
 router.post("/addJob", addJobCompany);
-
+router.get("/view", viewJobPage);
 
 module.exports = router;

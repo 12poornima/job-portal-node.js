@@ -69,7 +69,9 @@ const addJobCompany = async function (req, res, next) {
   await jobModel.create(req.body);
   res.redirect("/company/home");
 };
-
+const viewJobPage = function (req, res, next) {
+  res.render("company/view");
+};
 module.exports = {
   company,
   companySignUp,
@@ -79,4 +81,5 @@ module.exports = {
   companyHomePage,
   getAddJobPage,
   addJobCompany,
+  viewJobPage,
 };
