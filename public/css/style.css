@@ -145,7 +145,7 @@
     background: gray;
 }
 .join{
-    background-image: linear-gradient(rgba(4,11,75,0.719),rgba(4,26,100,0.73)), url(https://www.advisedskills.com/images/Blog/Programme_management_2.jpeg);
+    background-image: linear-gradient(rgba(173, 181, 249, 0.719),rgba(3, 22, 86, 0.73)), url(https://www.advisedskills.com/images/Blog/Programme_management_2.jpeg);
     background-size: cover;
     height: 90vh;
     width: 100%;

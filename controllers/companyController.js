@@ -72,6 +72,9 @@ const addJobCompany = async function (req, res, next) {
 const viewJobPage = function (req, res, next) {
   res.render("company/view");
 };
+const companyView=function(req,res,next){
+res.render("company/companyview")
+}
 module.exports = {
   company,
   companySignUp,
@@ -82,4 +85,5 @@ module.exports = {
   getAddJobPage,
   addJobCompany,
   viewJobPage,
+  companyView
 };
