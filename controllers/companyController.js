@@ -69,12 +69,13 @@ const addJobCompany = async function (req, res, next) {
   await jobModel.create(req.body);
   res.redirect("/company/home");
 };
-const viewJobPage = function (req, res, next) {
-  res.render("company/view");
+
+const companyView = async function (req, res, next) {
+  let allJobs = await jobModel.find({ company_id: req.session.company._id });
+  res.render("company/companyview", {
+    allJobs,
+  });
 };
-const companyView=function(req,res,next){
-res.render("company/companyview")
-}
 module.exports = {
   company,
   companySignUp,
@@ -84,6 +85,5 @@ module.exports = {
   companyHomePage,
   getAddJobPage,
   addJobCompany,
-  viewJobPage,
-  companyView
+  companyView,
 };

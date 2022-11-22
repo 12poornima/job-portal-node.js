@@ -39,7 +39,7 @@ const {
   companyHomePage,
   getAddJobPage,
   addJobCompany,
-  viewJobPage,
+
   companyView,
 } = require("../controllers/companyController");
 
@@ -51,7 +51,7 @@ router.post("/login", loginCompany);
 router.get("/home", companyHomePage);
 router.get("/add-job", getAddJobPage);
 router.post("/addJob", addJobCompany);
-router.get("/view", viewJobPage);
-router.get("/companyview",companyView)
+
+router.get("/companyview", companyView);
 
 module.exports = router;

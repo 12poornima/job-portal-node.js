@@ -28,7 +28,7 @@
                     <a class="nav-link" href="#">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/company/companyview">View Job</a>
+                    <a class="nav-link" href="/company/view">View Job</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
@@ -36,26 +36,36 @@
                 </li>
             </ul>
         </div>
+
     </div>
 </nav>
+<h1 class="container-fluid py-5 text-center">NEW JOBS</h1>
 <section class="job-list" id="jobs">
     {{#each allJobs}}
     <div class="job-card">
         <div class="job-name">
+            <img class="job-pro" src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Tesla_logo.png">
             <div class="job-details">
-                <h4>{{Name}}</h4>
-                <h4>{{Vacancies}}</h4>
-                <h4>{{status}}</h4>
-                <h4>{{Job_discription}}</h4>
-                <h4>{{Salary}}</h4>
-                <h4>{{Experiencs}}</h4>
-                <h4>{{Last_apply_date}}</h4>
                 <h4>{{companyName}}</h4>
-                <button>CLOSE VACANCY</button>
-
+                <h3>{{Name}}</h3>
+                <h3>{{Job_discription}}</h3>
+                <h2>{{Experiencs}}</h2>
+                <h5>Salary:{{Salary}}</h5>
+                <h5>Last apply date:{{Last_apply_date}}</h5>
+                <h5>{{Vacancies}}</h5>
+                <h5>{{status}}</h5>
+            </div>
+            {{!-- <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">JavaScript</a>
+            </div> --}}
+            <div class="job-posted">
+                Just Now
             </div>
         </div>
+        <button>Apply now</button>
     </div>
     {{/each}}
-
+    <button class="job-more">More List</button>
 </section>

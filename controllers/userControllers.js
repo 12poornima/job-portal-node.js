@@ -1,5 +1,6 @@
 const usermodels = require("../models/usermodels");
 const bcrypt = require("bcrypt");
+const jobModel = require("../models/jobModel");
 
 const indexPage = function (req, res, next) {
   res.render("index", {
@@ -19,12 +20,7 @@ const loginPage = function (req, res, next) {
   res.render("login");
 };
 const homePage = function (req, res, next) {
-  console.log(req.session.user);
-  if (req.session.user) {
-    res.render("home");
-  } else {
-    res.redirect("/login");
-  }
+  res.render("home");
 };
 
 const doSignUp = async function (req, res) {
@@ -60,6 +56,12 @@ const doLogin = async function (req, res) {
     res.redirect("/login");
   }
 };
+const viewJobPage = async function (req, res, next) {
+  let allJobs = await jobModel.find();
+  res.render("view", {
+    allJobs,
+  });
+};
 
 module.exports = {
   indexPage,
@@ -68,4 +70,5 @@ module.exports = {
   doSignUp,
   doLogin,
   homePage,
+  viewJobPage,
 };
