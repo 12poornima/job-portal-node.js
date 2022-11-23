@@ -10,7 +10,7 @@
 
 <nav class="navbar navbar-dark navbar-expand-lg bg-danger">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"> THIS ARE THE NEW JOBS</a>
+        <a class="navbar-brand" href="#"> THIS ARE THE COMPANIES</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -22,7 +22,7 @@
                     <a class="nav-link " href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#companies">Companies</a>
+                    <a class="nav-link " href="/userscompanypage">Companies</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Blog</a>
@@ -39,21 +39,21 @@
 
     </div>
 </nav>
-<h1 class="container-fluid py-5 text-center">NEW JOBS</h1>
+<h1 class="container-fluid py-5 text-center">COMPANIES</h1>
 <section class="job-list" id="jobs">
-    {{#each allJobs}}
+    {{#each allCompany}}
     <div class="job-card">
         <div class="job-name">
             <img class="job-pro" src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Tesla_logo.png">
             <div class="job-details">
-                <h4>{{companyName}}</h4>
-                <h3>{{Name}}</h3>
-                <h3>{{Job_discription}}</h3>
-                <h2>{{Experiencs}}</h2>
-                <h5>Salary:{{Salary}}</h5>
+                <h4>{{Name}}</h4>
+                <h3>{{Email}}</h3>
+                <h3>{{Password}}</h3>
+                <h2>{{Phone}}</h2>
+                {{!-- <h5>Salary:{{Salary}}</h5>
                 <h5>Last apply date:{{Last_apply_date}}</h5>
-                <h5>Vacancies:{{Vacancies}}</h5>
-                <h5>{{status}}</h5>
+                <h5>{{Vacancies}}</h5>
+                <h5>{{status}}</h5> --}}
             </div>
             {{!-- <div class="job-label">
                 <a class="label-a" href="#">HTML</a>
