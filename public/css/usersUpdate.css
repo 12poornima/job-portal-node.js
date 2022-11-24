@@ -1,0 +1,23 @@
+body{
+    background-image: linear-gradient(rgba(80, 128, 133, 0.719),rgba(22, 191, 234, 0.73)), url(https://cdn.gobankingrates.com/wp-content/uploads/2017/07/0-Main-sturti-GettyImages-498941586.jpg);
+background-size: cover;
+}
+h1{
+    text-align: center;
+}
+.btn{
+        position: relative;
+        background-color: #6c6cf1;
+        border: none;
+        font-size: 18px;
+        color: #ffff;
+        padding: 20px;
+        width: 90px;
+        text-align: center;
+        border-radius: 1rem;}
+
+    .btn:hover{
+        background: rgb(81, 46, 194);
+        border: none;
+        transition: all 0.4s;
+    } 

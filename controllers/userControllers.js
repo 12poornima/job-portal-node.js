@@ -69,6 +69,9 @@ const usersCompany = async function (req, res, next) {
     allCompany,
   });
 };
+const usersUpdateForm=async function(req,res,next){
+  res.render("updateFormUsers")
+}
 
 module.exports = {
   indexPage,
@@ -79,4 +82,5 @@ module.exports = {
   homePage,
   viewJobPage,
   usersCompany,
+  usersUpdateForm
 };
