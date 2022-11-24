@@ -8,7 +8,7 @@ const {
   doLogin,
   homePage,
   viewJobPage,
-  usersCompany
+  usersCompany,
 } = require("../controllers/userControllers");
 const checkUsedLogedIn = require("../middlewares/checkUserLogedIn");
 
@@ -23,6 +23,6 @@ router.get("/home", checkUsedLogedIn, homePage);
 router.post("/signup", doSignUp);
 router.post("/login", doLogin);
 router.get("/view", viewJobPage);
-router.get("/userscompanypage",usersCompany)
+router.get("/userscompanypage", usersCompany);
 
 module.exports = router;

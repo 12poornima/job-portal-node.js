@@ -1,0 +1,25 @@
+h1{
+    text-align: center;
+}
+body{
+    background-image: url(https://thumbs.dreamstime.com/z/closeup-female-hands-typing-laptop-keyboard-closeup-female-hands-typing-laptop-keyboard-woman-working-home-office-concept-126140309.jpg);
+    background-size: cover;
+}
+.btn{
+    position: relative;
+    background-color: #0d0d0d;
+    border: none;
+    font-size: 18px;
+    color: #ffff;
+    padding: 20px;
+    width: 100px;
+    text-align: center;
+    border-radius: 1rem;
+   
+}
+.btn:hover{
+    background: rgb(245, 175, 216);
+    color: rgb(15,15, 13);
+    border: none;
+    transition: all 0.4s;
+}

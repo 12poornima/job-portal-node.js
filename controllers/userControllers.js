@@ -63,11 +63,12 @@ const viewJobPage = async function (req, res, next) {
     allJobs,
   });
 };
-const usersCompany=async function(req,res,next){
-  let allCompany=await companyModel.find()
-  res.render("usersCompanyPage",{
-    allCompany
-  })}
+const usersCompany = async function (req, res, next) {
+  let allCompany = await companyModel.find();
+  res.render("usersCompanyPage", {
+    allCompany,
+  });
+};
 
 module.exports = {
   indexPage,
@@ -77,5 +78,5 @@ module.exports = {
   doLogin,
   homePage,
   viewJobPage,
-  usersCompany
+  usersCompany,
 };

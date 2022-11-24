@@ -21,5 +21,25 @@ const companySchema = mongoose.Schema({
     maxLength: 10,
     required: true,
   },
+  companyType: {
+    type: String,
+    maxLength: 20,
+  },
+  Discription: {
+    type: String,
+    maxLength: 200,
+  },
+  Location: {
+    type: String,
+    maxLength: 200,
+  },
+  Country: {
+    type: String,
+    maxLength: 200,
+  },
+  Image: {
+    type: String,
+    maxLength: 200,
+  },
 });
 module.exports = mongoose.model("company", companySchema);
