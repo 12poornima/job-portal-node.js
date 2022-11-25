@@ -1,5 +1,5 @@
 const checkCompanyLogged = function (req, res, next) {
-  if (req.session.user) {
+  if (req.session.company) {
     next();
   } else {
     res.redirect("/company/login");
