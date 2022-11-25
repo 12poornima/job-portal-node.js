@@ -94,7 +94,11 @@ const updateProfile = async function (req, res, next) {
   req.session.company = newCompany;
   res.redirect("/company/home");
 };
-
+const companyProfile = function (req, res, next) {
+  res.render("company/profile", {
+    company: req.session.company,
+  });
+};
 module.exports = {
   company,
   companySignUp,
@@ -107,4 +111,5 @@ module.exports = {
   companyView,
   updateProfilePage,
   updateProfile,
+  companyProfile,
 };

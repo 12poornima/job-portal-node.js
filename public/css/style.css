@@ -30,7 +30,7 @@
     transition: all 0.4s;
 }
 .btn0:hover{
-    background-color: rgba(214, 11, 11);
+    background-color: rgb(89, 214, 11);
     transition: all 0.4s;
     color: white;
     border: none;

@@ -12,6 +12,7 @@ const {
   companyView,
   updateProfilePage,
   updateProfile,
+  companyProfile,
 } = require("../controllers/companyController");
 const checkCompanyLogged = require("../middlewares/checkCompanyLogged");
 
@@ -26,5 +27,6 @@ router.post("/addJob", checkCompanyLogged, addJobCompany);
 router.get("/companyview", checkCompanyLogged, companyView);
 router.get("/updateProfilePage", checkCompanyLogged, updateProfilePage);
 router.post("/updateProfile", checkCompanyLogged, updateProfile);
+router.get("/profile", checkCompanyLogged, companyProfile);
 
 module.exports = router;
