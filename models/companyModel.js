@@ -37,9 +37,9 @@ const companySchema = mongoose.Schema({
     type: String,
     maxLength: 200,
   },
-  Image: {
-    type: String,
-    maxLength: 200,
+  profileUpdated: {
+    type: Boolean,
+    default: false,
   },
 });
 module.exports = mongoose.model("company", companySchema);

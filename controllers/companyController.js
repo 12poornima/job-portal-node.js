@@ -49,7 +49,7 @@ const loginCompany = async function (req, res) {
 };
 
 const companyHomePage = function (req, res, next) {
-  console.log(req.session.company);
+  // console.log(req.session.company);
   if (req.session.company) {
     res.render("company/companyHome", { company: req.session.company });
   } else {
@@ -76,8 +76,23 @@ const companyView = async function (req, res, next) {
     allJobs,
   });
 };
-const updateForm = function (req, res, next) {
-  res.render("company/updateForm");
+const updateProfilePage = function (req, res, next) {
+  res.render("company/updateProfilePage");
+};
+const updateProfile = async function (req, res, next) {
+  // console.log(req.body, req.files);
+  req.body.profileUpdated = true;
+  let newCompany = await companyModel.findOneAndUpdate(
+    { _id: req.session.company._id },
+    req.body,
+    { new: true }
+  );
+  req.files.Image.mv(
+    "./public/images/companyProfiles/" + req.session.company._id + ".jpg"
+  );
+  console.log(newCompany);
+  req.session.company = newCompany;
+  res.redirect("/company/home");
 };
 
 module.exports = {
@@ -90,5 +105,6 @@ module.exports = {
   getAddJobPage,
   addJobCompany,
   companyView,
-  updateForm,
+  updateProfilePage,
+  updateProfile,
 };
