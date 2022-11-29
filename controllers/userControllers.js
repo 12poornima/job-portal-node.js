@@ -2,6 +2,7 @@ const usermodels = require("../models/usermodels");
 const bcrypt = require("bcrypt");
 const jobModel = require("../models/jobModel");
 const companyModel = require("../models/companyModel");
+const jobApplicationModel = require("../models/jobApplicationModel");
 
 const indexPage = function (req, res, next) {
   res.render("index", {
@@ -69,9 +70,27 @@ const usersCompany = async function (req, res, next) {
     allCompany,
   });
 };
-const usersUpdateForm=async function(req,res,next){
-  res.render("updateFormUsers")
-}
+const usersUpdateForm = async function (req, res, next) {
+  res.render("updateFormUsers");
+};
+const applyJob = async function (req, res, next) {
+  console.log(req.params.id);
+  let jobDetails = await jobModel.findOne({ _id: req.params.id });
+  let application = {
+    userName: req.session.user.name,
+    userEmail: req.session.user.email,
+    userPhone: req.session.user.phone,
+    userAddress: req.session.user.Address,
+    userExperience: req.session.user.Experience,
+    company_id: jobDetails.company_id,
+    companyName: jobDetails.companyName,
+    jobId: jobDetails._id,
+    jobTitle: jobDetails.Name,
+  };
+  console.log(application);
+  await jobApplicationModel.create(application);
+  res.redirect("/home");
+};
 
 module.exports = {
   indexPage,
@@ -82,5 +101,6 @@ module.exports = {
   homePage,
   viewJobPage,
   usersCompany,
-  usersUpdateForm
+  usersUpdateForm,
+  applyJob,
 };
