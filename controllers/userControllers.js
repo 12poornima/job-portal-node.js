@@ -73,6 +73,23 @@ const usersCompany = async function (req, res, next) {
 const usersUpdateForm = async function (req, res, next) {
   res.render("updateFormUsers");
 };
+
+const updateFromProfile =async function(req,res,next){
+  req.body.profileUpdated=true
+ await usermodels.create(req.body)
+  { _id: req.session.user._id }
+    req.body,
+    { new: true }
+    req.files.Image.mv(
+      "./public/images/usersProfiles/"+req.session.user._id+".pdf"
+    )
+}
+ const userProfiles=async function(req,res,next){
+  res.render("/userprofile")
+
+ }
+
+
 const applyJob = async function (req, res, next) {
   console.log(req.params.id);
   let jobDetails = await jobModel.findOne({ _id: req.params.id });
@@ -103,4 +120,6 @@ module.exports = {
   usersCompany,
   usersUpdateForm,
   applyJob,
+  updateFromProfile,
+  userProfiles
 };

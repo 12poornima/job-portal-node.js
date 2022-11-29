@@ -11,6 +11,8 @@ const {
   usersCompany,
   usersUpdateForm,
   applyJob,
+  updateFromProfile,
+  userProfiles
 } = require("../controllers/userControllers");
 const checkUsedLogedIn = require("../middlewares/checkUserLogedIn");
 
@@ -27,6 +29,8 @@ router.post("/login", doLogin);
 router.get("/view", checkUsedLogedIn, viewJobPage);
 router.get("/userscompanypage", checkUsedLogedIn, usersCompany);
 router.get("/usersUpdate", checkUsedLogedIn, usersUpdateForm);
+router.post("/updateFormUsers",checkUsedLogedIn,updateFromProfile)
+router.get("/userprofile",userProfiles)
 router.get("/applyjob/:id", checkUsedLogedIn, applyJob);
 
 module.exports = router;
