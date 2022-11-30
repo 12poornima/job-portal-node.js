@@ -84,6 +84,7 @@ const updateProfile = async function (req, res, next) {
   req.body.profileUpdated = true;
   let newCompany = await companyModel.findOneAndUpdate(
     { _id: req.session.company._id },
+    
     req.body,
     { new: true }
   );
