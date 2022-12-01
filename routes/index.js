@@ -12,7 +12,8 @@ const {
   usersUpdateForm,
   applyJob,
   updateFromProfile,
-  userProfiles
+  userProfiles,
+  myApplications,
 } = require("../controllers/userControllers");
 const checkUsedLogedIn = require("../middlewares/checkUserLogedIn");
 
@@ -30,7 +31,8 @@ router.get("/view", checkUsedLogedIn, viewJobPage);
 router.get("/userscompanypage", checkUsedLogedIn, usersCompany);
 router.get("/usersUpdate", checkUsedLogedIn, usersUpdateForm);
 router.post("/updateFormUsers",checkUsedLogedIn,updateFromProfile)
-router.get("/userprofile",userProfiles)
+router.get("/userprofile", checkUsedLogedIn, userProfiles)
 router.get("/applyjob/:id", checkUsedLogedIn, applyJob);
+router.get("/myApplication", checkUsedLogedIn, myApplications)
 
 module.exports = router;

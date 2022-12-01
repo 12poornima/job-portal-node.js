@@ -76,38 +76,55 @@ const usersUpdateForm = async function (req, res, next) {
 
 const updateFromProfile =async function(req,res,next){
   req.body.profileUpdated=true
- await usermodels.create(req.body)
-  { _id: req.session.user._id }
+  let newUsers= await usermodels.findOneAndUpdate(
+    {_id:req.session.user._id},
     req.body,
-    { new: true }
-    req.files.Image.mv(
-      "./public/images/usersProfiles/"+req.session.user._id+".pdf"
-    )
+    {new:true}
+  );
+  req.files.Image.mv(
+    "./public/images/usersProfiles/"+req.session.user._id+".jpg"
+  );
+  
+  req.files.Resume.mv(
+    "./public/images/resumeUpload/"+req.session.user._id+".pdf"
+  );
+
+  console.log(newUsers)
+  req.session.user = newUsers;
+  res.redirect("/userprofile")
+
 }
  const userProfiles=async function(req,res,next){
-  res.render("/userprofile")
+  res.render("userprofile",{
+  user: req.session.user,
+  });
+}
 
- }
 
 
 const applyJob = async function (req, res, next) {
   console.log(req.params.id);
   let jobDetails = await jobModel.findOne({ _id: req.params.id });
   let application = {
-    userName: req.session.user.name,
+    UserName: req.session.user.name,
     userEmail: req.session.user.email,
     userPhone: req.session.user.phone,
     userAddress: req.session.user.Address,
     userExperience: req.session.user.Experience,
     company_id: jobDetails.company_id,
     companyName: jobDetails.companyName,
-    jobId: jobDetails._id,
+    jobId: req.params.id,
     jobTitle: jobDetails.Name,
   };
   console.log(application);
   await jobApplicationModel.create(application);
   res.redirect("/home");
 };
+const myApplications=async function (req,res,next){
+  let applications=await jobApplicationModel.find({userEmail:req.session.user.email})
+  console.log(applications)
+  res.render("myJobApplicationList",{applications})
+}
 
 module.exports = {
   indexPage,
@@ -121,5 +138,6 @@ module.exports = {
   usersUpdateForm,
   applyJob,
   updateFromProfile,
-  userProfiles
+  userProfiles,
+  myApplications
 };

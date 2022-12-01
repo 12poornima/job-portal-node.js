@@ -25,11 +25,7 @@ const jobApplicationSchema = mongoose.Schema({
     maxLength: 500,
     required: true,
   },
-  Skills: {
-    type: String,
-    maxLength: 500,
-    required: true,
-  },
+  
 
   companyName: {
     type: String,

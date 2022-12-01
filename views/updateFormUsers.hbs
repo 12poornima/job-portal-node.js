@@ -1,17 +1,10 @@
 <link rel="stylesheet" href="/css/usersUpdate.css">
 <h1>Update Form</h1>
-<form action="">
+
     <div class="registration-form">
-        <form action="/updateFormUsers" method="post" >
+        <form action="/updateFormUsers" method="post" enctype="multipart/form-data" >
             <table>
-                <tr>
-                    <td>
-                        RESUME:
-                    </td>
-                    <td>
-                        <textarea name="Resume" placeholder="enter your resume" id="" cols="30" rows="10"></textarea>
-                    </td>
-                </tr>
+               
                 <tr>
                     <td>
                         ADDRESS:
@@ -40,16 +33,23 @@
                 </tr>
                 <tr>
                     <td>
-                        IMAGES:
+                         UPLOAD IMAGES:
                     </td>
                     <td>
-                        <input type="file" name="Image" id="">
+                        <input type="file" name="Image" accept=".jpg" id="" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       UPLOAD RESUME:
+                    </td>
+                    <td>
+                        <input type="file" name="Resume" accept=".pdf">
                     </td>
                 </tr>
 
 
             </table>
-            <a href="/views/userProfile"> <button class="btn" type="submit">submit</button> </a>
+            <button class="btn" type="submit">submit</button> 
         </form>
     </div>
-</form>

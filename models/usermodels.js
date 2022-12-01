@@ -21,10 +21,6 @@ const taskSchema = mongoose.Schema({
     maxLength: 10,
     required: true,
   },
-  Resume: {
-    type: String,
-    maxLength: 500,
-  },
   Address: {
     type: String,
     maxLength: 500,
